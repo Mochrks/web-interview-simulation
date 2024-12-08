@@ -72,14 +72,14 @@ export default function InterviewQuestions({ questions }: InterviewQuestionsProp
         return (
             <Card className="w-full">
                 <CardHeader>
-                    <CardTitle className="text-2xl text-center text-indigo-800">Interview Completed</CardTitle>
+                    <CardTitle className="text-2xl text-center text-indigo-800 dark:text-indigo-400 ">Interview Completed</CardTitle>
                     <CardDescription className="text-center">Thank you for completing the interview simulation!</CardDescription>
                 </CardHeader>
                 <CardContent id="interview-results">
                     <div className="space-y-6">
                         {questions.map((question, index) => (
                             <div key={index} className="bg-white p-4 rounded-lg shadow">
-                                <h3 className="font-semibold text-indigo-700">Question {index + 1}: {question}</h3>
+                                <h3 className="font-semibold text-indigo-700 dark:text-indigo-600 ">Question {index + 1}: {question}</h3>
                                 <p className="mt-2 text-gray-600">{answers[index]}</p>
                             </div>
                         ))}
@@ -98,7 +98,7 @@ export default function InterviewQuestions({ questions }: InterviewQuestionsProp
     return (
         <Card className="w-full">
             <CardHeader>
-                <CardTitle className="text-2xl text-indigo-800">Question {currentQuestionIndex + 1} of {questions.length}</CardTitle>
+                <CardTitle className="text-2xl text-indigo-800 dark:text-indigo-400 ">Question {currentQuestionIndex + 1} of {questions.length}</CardTitle>
                 <CardDescription className="text-lg font-medium">{questions[currentQuestionIndex]}</CardDescription>
             </CardHeader>
             <CardContent>
