@@ -12,7 +12,7 @@
 
 ## Overview
 
-**Web Interview Simulation** is an innovative platform designed to help job seekers prepare for technical interviews through realistic, interactive simulation experiences. The project leverages modern web technologies to provide a comprehensive interview preparation tool.
+**Web Interview Simulation** is an innovative platform designed to help job seekers prepare for technicals interview through realistic, interactive simulation experiences. The project leverages modern web technologies to provide a comprehensive interview preparation tool.
 
 ## Features
 
