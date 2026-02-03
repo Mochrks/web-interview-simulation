@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
+import { ModeToggle } from '@/components/demo/ModeToggle';
 
 export default function Navbar() {
     return (
@@ -28,6 +29,7 @@ export default function Navbar() {
                                 Start Practice
                             </Button>
                         </Link>
+                        <ModeToggle />
                     </div>
                 </div>
             </div>
