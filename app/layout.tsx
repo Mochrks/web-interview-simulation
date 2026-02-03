@@ -8,9 +8,11 @@ import Footer from '@/components/demo/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Job Interview Simulator',
-  description: 'Practice your interview skills with our modern simulator',
+  title: 'INVSIM - Interview Apps Simulator',
+  description: 'Master your interview skills with multi-stage simulation, voice interaction, and live coding challenges',
 }
+
+import SmoothScroll from '@/components/SmoothScroll'
 
 export default function RootLayout({
   children,
@@ -20,16 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <SmoothScroll>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </SmoothScroll>
       </body>
     </html>
   )

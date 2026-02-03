@@ -1,20 +1,37 @@
-import { interviewQuestions } from '@/data/interviewQuestions';
-import InterviewQuestions from '@/components/demo/InterviewQuestions';
+'use client';
+
+import { useState } from 'react';
+import InterviewSimulator, { Answer } from '@/components/interview/InterviewSimulator';
+import InterviewResults from '@/components/interview/InterviewResults';
 
 export default function InterviewPage() {
-    const shuffled = interviewQuestions.sort(() => 0.5 - Math.random());
-    const selectedQuestions = shuffled.slice(0, 10);
+    const [isComplete, setIsComplete] = useState(false);
+    const [answers, setAnswers] = useState<Answer[]>([]);
+    const [overallScore, setOverallScore] = useState(0);
+
+    const handleComplete = (finalAnswers: Answer[], score: number) => {
+        setAnswers(finalAnswers);
+        setOverallScore(score);
+        setIsComplete(true);
+    };
+
+    const handleRestart = () => {
+        setIsComplete(false);
+        setAnswers([]);
+        setOverallScore(0);
+    };
 
     return (
-        <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-                <h1 className="text-4xl font-bold text-center text-indigo-800 dark:text-indigo-400 mb-8">Job Interview Simulator</h1>
-                <p className="text-center mb-8">
-                    Practice your interview skills with our AI-powered simulator. Answer the following 10 questions as if you were in a real job interview.
-                </p>
-                <InterviewQuestions questions={selectedQuestions} />
-            </div>
+        <div className="max-w-7xl mx-auto">
+            {isComplete ? (
+                <InterviewResults
+                    answers={answers}
+                    overallScore={overallScore}
+                    onRestart={handleRestart}
+                />
+            ) : (
+                <InterviewSimulator onComplete={handleComplete} />
+            )}
         </div>
     );
 }
-
