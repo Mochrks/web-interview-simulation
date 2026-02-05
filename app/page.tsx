@@ -1,60 +1,90 @@
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { ArrowRight, Mic, Code2, BarChart3, FileText } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-20">
+      <section className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-10 md:py-20">
         <div className="max-w-6xl w-full">
-          <div className="bauhaus-card bauhaus-accent-red mb-12 animate-slide-up">
-            <h1 className="bauhaus-heading text-6xl md:text-8xl lg:text-9xl">
+          <div className="bauhaus-card bauhaus-accent-red mb-8 md:mb-12 animate-slide-up">
+            <h1 className="bauhaus-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
               JOB INTERVIEW
               <br />
               SIMULATION
             </h1>
           </div>
-
-          <div className="bauhaus-card mb-12 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <p className="text-2xl md:text-3xl font-bold leading-relaxed">
+          <div
+            className="bauhaus-card mb-8 md:mb-12 animate-slide-up"
+            style={{ animationDelay: '0.1s' }}
+          >
+            <p className="text-xl md:text-3xl font-bold leading-relaxed">
               Master Your Interview Skills Through
-              <span className="bauhaus-accent-yellow px-3 py-1 ml-3">Professional</span>
-              <br />
+              <span className="bauhaus-accent-yellow inline-block px-3 py-1 sm:ml-3 mt-2 sm:mt-0">
+                Professional
+              </span>
+              <br className="hidden sm:block" />
               Real-World Simulation
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bauhaus-card bauhaus-accent-blue animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <Mic className="w-12 h-12 mb-4" />
-              <h3 className="font-bold uppercase text-lg mb-2">Voice Support</h3>
-              <p className="text-sm">Speech recognition & text-to-speech</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+            <div
+              className="bauhaus-card bauhaus-accent-blue animate-slide-up flex flex-col h-full"
+              style={{ animationDelay: '0.2s' }}
+            >
+              <Mic className="w-10 h-10 md:w-12 md:h-12 mb-4 shrink-0" />
+              <h3 className="font-bold uppercase text-base md:text-lg mb-2">
+                Voice Support
+              </h3>
+              <p className="text-sm mt-auto">
+                Speech recognition & text-to-speech
+              </p>
             </div>
 
-            <div className="bauhaus-card bauhaus-accent-yellow animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <Code2 className="w-12 h-12 mb-4" />
-              <h3 className="font-bold uppercase text-lg mb-2">Live Coding</h3>
-              <p className="text-sm">Real-time code editor with execution</p>
+            <div
+              className="bauhaus-card bauhaus-accent-yellow animate-slide-up flex flex-col h-full"
+              style={{ animationDelay: '0.3s' }}
+            >
+              <Code2 className="w-10 h-10 md:w-12 md:h-12 mb-4 shrink-0" />
+              <h3 className="font-bold uppercase text-base md:text-lg mb-2">
+                Live Coding
+              </h3>
+              <p className="text-sm mt-auto">
+                Real-time code editor with execution
+              </p>
             </div>
 
-            <div className="bauhaus-card bauhaus-accent-red animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <BarChart3 className="w-12 h-12 mb-4" />
-              <h3 className="font-bold uppercase text-lg mb-2">Analytics</h3>
-              <p className="text-sm">Detailed performance evaluation</p>
+            <div
+              className="bauhaus-card bauhaus-accent-red animate-slide-up flex flex-col h-full"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <BarChart3 className="w-10 h-10 md:w-12 md:h-12 mb-4 shrink-0" />
+              <h3 className="font-bold uppercase text-base md:text-lg mb-2">
+                Analytics
+              </h3>
+              <p className="text-sm mt-auto">Detailed performance evaluation</p>
             </div>
 
-            <div className="bauhaus-card bauhaus-accent-blue animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              <FileText className="w-12 h-12 mb-4" />
-              <h3 className="font-bold uppercase text-lg mb-2">Reports</h3>
-              <p className="text-sm">Export in CSV, Excel, PDF, DOCX</p>
+            <div
+              className="bauhaus-card bauhaus-accent-blue animate-slide-up flex flex-col h-full"
+              style={{ animationDelay: '0.5s' }}
+            >
+              <FileText className="w-10 h-10 md:w-12 md:h-12 mb-4 shrink-0" />
+              <h3 className="font-bold uppercase text-base md:text-lg mb-2">
+                Reports
+              </h3>
+              <p className="text-sm mt-auto">Export in CSV, Excel, PDF, DOCX</p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Link href="/interview">
-              <Button className="bauhaus-btn bauhaus-accent-red text-2xl px-12 py-8">
+          <div
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up"
+            style={{ animationDelay: '0.6s' }}
+          >
+            <Link href="/interview" className="w-full sm:w-auto">
+              <Button className="bauhaus-btn bauhaus-accent-red text-xl md:text-2xl px-8 md:px-12 py-6 md:py-8 w-full sm:w-auto">
                 Start Interview
-                <ArrowRight className="w-8 h-8 ml-3" />
+                <ArrowRight className="w-6 h-6 md:w-8 md:h-8 ml-3" />
               </Button>
             </Link>
           </div>
@@ -73,8 +103,9 @@ export default function Home() {
                 <div className="text-6xl font-black mb-4">01</div>
                 <h3 className="bauhaus-subheading text-3xl mb-4">Behavioral</h3>
                 <p className="text-lg leading-relaxed">
-                  Answer behavioral questions using voice or text. Get evaluated on clarity,
-                  confidence, and keyword matching. Practice STAR method responses.
+                  Answer behavioral questions using voice or text. Get evaluated
+                  on clarity, confidence, and keyword matching. Practice STAR
+                  method responses.
                 </p>
               </div>
               <div className="bauhaus-card bg-card">
@@ -100,8 +131,9 @@ export default function Home() {
                 <div className="text-6xl font-black mb-4">02</div>
                 <h3 className="bauhaus-subheading text-3xl mb-4">Technical</h3>
                 <p className="text-lg leading-relaxed">
-                  Test your technical knowledge with multiple-choice and open-ended questions.
-                  Cover algorithms, databases, APIs, and system design.
+                  Test your technical knowledge with multiple-choice and
+                  open-ended questions. Cover algorithms, databases, APIs, and
+                  system design.
                 </p>
               </div>
             </div>
@@ -109,10 +141,13 @@ export default function Home() {
             <div className="bauhaus-asymmetric">
               <div className="bauhaus-card bauhaus-accent-red">
                 <div className="text-6xl font-black mb-4">03</div>
-                <h3 className="bauhaus-subheading text-3xl mb-4">Live Coding</h3>
+                <h3 className="bauhaus-subheading text-3xl mb-4">
+                  Live Coding
+                </h3>
                 <p className="text-lg leading-relaxed">
-                  Solve coding challenges in JavaScript, TypeScript, Java, or Golang.
-                  Run tests, get instant feedback, and improve your problem-solving skills.
+                  Solve coding challenges in JavaScript, TypeScript, Java, or
+                  Golang. Run tests, get instant feedback, and improve your
+                  problem-solving skills.
                 </p>
               </div>
               <div className="bauhaus-card bg-card">
@@ -136,10 +171,13 @@ export default function Home() {
               </div>
               <div className="bauhaus-card bauhaus-accent-blue">
                 <div className="text-6xl font-black mb-4">04</div>
-                <h3 className="bauhaus-subheading text-3xl mb-4">Final Round</h3>
+                <h3 className="bauhaus-subheading text-3xl mb-4">
+                  Final Round
+                </h3>
                 <p className="text-lg leading-relaxed">
-                  HR and managerial questions to assess cultural fit, career goals,
-                  and professional development. Complete your interview journey.
+                  HR and managerial questions to assess cultural fit, career
+                  goals, and professional development. Complete your interview
+                  journey.
                 </p>
               </div>
             </div>
